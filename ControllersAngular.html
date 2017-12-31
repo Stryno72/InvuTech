@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="angular.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<title>Angular</title>
+</head>
+	<!--
+controlers makes up your application
+SPA= singul-page application
+mvc=model view controler
+Model -how the application behaves with data
+view-Whatever is visable to the useer
+controller - the codeing that acts between model and viewer
+Model <-controller-> view
+-->
+<body><div ng-app="app">
+	
+	<div ng-controller="languages">
+		Select your Favourite Language: 
+		<button ng-click="php()">PHP</button>
+		<button ng-click="js()">Javascript</button>
+		<button ng-click="cpp()">C++</button>
+		<button ng-click="java()">Java</button>
+		
+		<p>You have selected:{{myFavLanguage}}</p>
+		
+	</div>
+	<script> var application = angular.module("app",[]);
+	application.controller('languages',['$scope', function($scope){$scope.myFavLanguage ='none';
+				$scope.php = function(){
+					$scope.myFavLanguage = 'PHP';
+				} ;
+				$scope.js = function(){
+					$scope.myFavLanguage = '.JS';
+				} ;												  
+				$scope.c = function(){
+					$scope.myFavLanguage = 'C++';
+				} ;
+				$scope.java = function(){
+					$scope.myFavLanguage = 'Stuff';
+				} ;												  
+																	  }]);
+		
+	</script>
+	
+	
+	
+</div></body>
+</html>
